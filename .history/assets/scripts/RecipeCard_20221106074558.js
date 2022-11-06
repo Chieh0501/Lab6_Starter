@@ -117,19 +117,19 @@ class RecipeCard extends HTMLElement {
 
     let article = this.shadowRoot.querySelector('article');// A6. TODO - Select the <article> we added to the Shadow DOM in the constructor
     article.innerHTML = `
-      <img src= ${data.imgSrc} alt=${data.imgAlt}>
+      <img src="https://link-to-article.com/recipe-thumbnail.jpg" alt="Recipe Title">
       <p class="title">
-        <a href=${data.titleLnk}>${data.titleTxt}</a>
+        <a href="https://link-to-article.com">Title</a>
       </p>
-      <p class="organization">${data.organization}</p>
+      <p class="organization">The Chef's Organization</p>
       <div class="rating">
-        <span>${data.rating}</span>
+        <span>5</span>
         <img src="/assets/images/icons/5-star.svg" alt="5 stars">
-        <span>(${data.numRatings})</span>
+        <span>(500)</span>
       </div>
-      <time>${data.lengthTime}</time>
+      <time>50 min</time>
       <p class="ingredients">
-        ${data.ingredients}
+        Comma, Separated, List, of, Ingredients
       </p>
     `;// A7. TODO - Set the contents of the <article> with the <article> template given in
     //           cardTemplate.html and the data passed in (You should only have one <article>,
@@ -137,6 +137,6 @@ class RecipeCard extends HTMLElement {
     //           literals (tempalte strings) and element.innerHTML for this.
   }
 }
-customElements.define('recipe-card', RecipeCard);
+
 // A8. TODO - Define the Class as a customElement so that you can create
 //           'recipe-card' elements

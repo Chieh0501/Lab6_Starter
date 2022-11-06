@@ -42,24 +42,21 @@ function addRecipesToDocument(recipes) {
   //            create a <recipe-card> element for each one, and populate
   //            each <recipe-card> with that recipe data using element.data = ...
   //            Append each element to <main>  
-  if (recipes.length != 0){
-    recipes.forEach(function (recipe, index) {
-        let recipeN = document.createElement('recipe-card');
-        recipeN.data = {
-          "imgSrc": recipe.imgSrc,
-          "imgAlt": recipe.imgAlt,
-          "titleLnk": recipe.titleLnk,
-          "titleTxt": recipe.titleTxt,
-          "organization": recipe.organization,
-          "rating": recipe.rating,
-          "numRatings": recipe.numRatings,
-          "lengthTime": recipe.lengthTime,
-          "ingredients": recipe.ingredients
-        }
-        main1.appendChild(recipeN);
-      });
-  }
-  
+  recipes.forEach(function (recipe, index) {
+    let recipeN = document.createElement('recipe-card');
+    recipeN.data = {
+      "imgSrc": recipe.imgSrc,
+      "imgAlt": recipe.imgAlt,
+      "titleLnk": recipe.titleLnk,
+      "titleTxt": recipe.titleTxt,
+      "organization": recipe.organization,
+      "rating": recipe.rating,
+      "numRatings": recipe.numRatings,
+      "lengthTime": recipe.lengthTime,
+      "ingredients": recipe.ingredients
+    }
+    main1.appendChild(recipeN);
+  });
 }
 /**
  * Takes in an array of recipes, converts it to a string, and then
@@ -110,12 +107,6 @@ function initFormHandler() {
     recipes.push(recipeObject);
     saveRecipesToStorage(recipes);
   });
-  const clearbtn = document.getElementsByClassName('danger')[0];
-  clearbtn.addEventListener('click', function(){
-    localStorage.clear();
-    document.getElementsByTagName('main')[0].innerHTML = '';
-  });
-
   // Steps B4-B9 will occur inside the event listener from step B3
   // B4. TODO - Create a new FormData object from the <form> element reference above
   // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
